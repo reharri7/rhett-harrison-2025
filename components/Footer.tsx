@@ -8,12 +8,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
             <p className="text-gray-600 dark:text-gray-300">
-              © {new Date().getFullYear()} John Doe. All rights reserved.
+              © {new Date().getFullYear()} Rhett Harrison. All rights reserved.
             </p>
           </div>
           <div className="flex space-x-6">
             <Link
-              href="https://github.com"
+              href="https://https://github.com/reharri7"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -21,18 +21,12 @@ export default function Footer() {
               <Github className="h-5 w-5" />
             </Link>
             <Link
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/rhettharrison"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             >
               <Linkedin className="h-5 w-5" />
-            </Link>
-            <Link
-              href="mailto:john@example.com"
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              <Mail className="h-5 w-5" />
             </Link>
           </div>
         </div>

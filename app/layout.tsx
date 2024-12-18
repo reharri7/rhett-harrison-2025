@@ -9,8 +9,41 @@ import {Toaster} from "sonner";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'John Doe | Web Developer',
-  description: 'Full-stack web developer specializing in modern web technologies',
+  title: 'Rhett Harrison | Senior Software Engineer',
+  description: 'Full-stack Senior Software Engineer specializing in modern web technologies',
+  applicationName: "Rhett Harrison",
+  authors: [{name: "Rhett Harrison", url: 'https://rhettharrison.com'}],
+  creator: "Rhett Harrison",
+  openGraph: {
+    type: "website",
+    url: "https://rhettharrison.com",
+    description: "Full-stack Senior Software Engineer specializing in modern web technologies",
+    siteName: "Rhett Harrison",
+    images: [
+      {
+        url: "/images/og.png",
+        height: "630",
+        width: "1200",
+        type: "image/png",
+        alt: "Cedar Peak Technologies",
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: '@site',
+    creator: '@creator',
+    title: 'Cedar Peak Technologies',
+    description: 'Serving The Motherlode\'s Software needs.',
+    images: {
+      url: "/images/og.png",
+      height: "630",
+      width: "1200",
+      type: "image/png",
+      alt: "Cedar Peak Technologies",
+    }
+  },
+  appleWebApp: { capable: true, title: "Cedar Peak Technologies", statusBarStyle: "black-translucent" }
 };
 
 export default function RootLayout({

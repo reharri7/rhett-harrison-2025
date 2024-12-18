@@ -14,10 +14,10 @@ export default function Hero() {
         className="text-center"
       >
         <h1 className="text-5xl font-bold text-blue-600 mb-6">
-          John Doe
+          Rhett Harrison
         </h1>
         <h2 className="text-3xl font-semibold text-blue-800 dark:text-blue-400 mb-4">
-          Full-Stack Web Developer
+          Senior Software Engineer
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
           Building beautiful, responsive, and user-friendly web applications
@@ -25,7 +25,7 @@ export default function Hero() {
         </p>
         <div className="flex justify-center gap-6 mb-12">
           <Link
-            href="https://github.com"
+            href="https://github.com/reharri7"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -33,7 +33,7 @@ export default function Hero() {
             <Github className="w-8 h-8" />
           </Link>
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/rhettharrison/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-800 transition-colors"

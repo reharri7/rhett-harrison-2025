@@ -9,9 +9,9 @@ import { cn } from '@/lib/utils';
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact' },
+  // { name: 'Projects', href: '/projects' },
+  // { name: 'Blog', href: '/blog' },
+  // { name: 'Contact', href: '/contact' },
   { name: 'Resume', href: '/resume' },
 ];
 
@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-bold text-blue-600">
-              JD
+              RH
             </Link>
           </div>
           

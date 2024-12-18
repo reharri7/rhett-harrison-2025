@@ -8,22 +8,22 @@ const skills = [
   {
     category: 'Frontend Development',
     icon: Layout,
-    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux'],
+    items: ['Angular', 'Material', 'React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
   },
   {
     category: 'Backend Development',
     icon: Server,
-    items: ['Node.js', 'Express', 'Python', 'Django', 'RESTful APIs'],
+    items: ['SpringBoot', 'Java'],
   },
   {
     category: 'Database',
     icon: Database,
-    items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Prisma'],
+    items: ['PostgreSQL', 'MySQL', 'PL/SQL', 'Prisma'],
   },
   {
     category: 'Tools & Others',
     icon: Code,
-    items: ['Git', 'Docker', 'AWS', 'CI/CD', 'Jest'],
+    items: ['Git', 'Docker'],
   },
 ];
 
@@ -40,19 +40,19 @@ export default function About() {
         <div>
           <h1 className="text-4xl font-bold text-blue-600 mb-6">About Me</h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-            Hi! I&apos;m John Doe, a passionate full-stack developer with 5 years of experience
+            Hi! I&apos;m Rhett Harrison, a passionate full-stack developer with 3 years of experience
             in building web applications. I specialize in creating responsive,
             user-friendly websites using modern technologies.
           </p>
           <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
             <Globe className="w-5 h-5 text-blue-600" />
-            <span>Based in San Francisco, CA</span>
+            <span>Based in Sonora, CA</span>
           </div>
         </div>
         <div className="relative h-[400px] rounded-lg overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=800&h=1000&fit=crop"
-            alt="John Doe"
+            alt="Rhett Harrison"
             fill
             className="object-cover"
           />
@@ -73,12 +73,12 @@ export default function About() {
         <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
           <p className="text-gray-600 dark:text-gray-300 mb-6">
             My journey in web development began during my computer science studies
-            at Stanford University. What started as a curiosity quickly turned into
+            at Arizona State University. What started as a curiosity quickly turned into
             a passion for creating innovative digital solutions.
           </p>
           <p className="text-gray-600 dark:text-gray-300">
             Over the years, I&apos;ve had the privilege of working with startups and
-            established companies, helping them build scalable web applications
+            established agencies, helping them build scalable web applications
             and implement modern development practices. I&apos;m constantly learning
             and exploring new technologies to stay at the forefront of web development.
           </p>

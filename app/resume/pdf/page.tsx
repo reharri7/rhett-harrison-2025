@@ -78,10 +78,10 @@ const ResumePDF = () => (
     <Page size="A4" style={styles.page}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.name}>John Doe</Text>
-        <Text style={styles.title}>Senior Full Stack Developer</Text>
+        <Text style={styles.name}>Rhett Harrison</Text>
+        <Text style={styles.title}>Senior Full Software Engineer</Text>
         <Text style={styles.contact}>
-          San Francisco, CA • john@example.com • (123) 456-7890
+          Sonora, CA • rhettharrison.dev@gmail.com • (209) 605-1908
         </Text>
       </View>
 
@@ -89,9 +89,11 @@ const ResumePDF = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Professional Summary</Text>
         <Text style={styles.description}>
-          Senior Full Stack Developer with 5+ years of experience in building scalable web applications.
-          Specialized in React, Node.js, and cloud technologies. Proven track record of leading teams
-          and delivering high-impact projects.
+          Full Stack Software Engineer with three years of experience designing, developing, and maintaining innovative
+          products across government and agriculture industries. My expertise spans various platforms and programming
+          languages, enabling me to deliver high-quality solutions. I excel in self-management during independent
+          projects, thrive in collaborative team settings, and have mentored multiple software engineers, fostering
+          professional growth. Passionate about leveraging technology to solve complex problems.
         </Text>
       </View>
 
@@ -99,18 +101,16 @@ const ResumePDF = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Experience</Text>
         <View style={styles.experienceItem}>
-          <Text style={styles.companyTitle}>Senior Full Stack Developer</Text>
-          <Text style={styles.period}>Tech Innovators Inc. • 2022 - Present</Text>
-          <Text style={styles.description}>• Led development of microservices-based architecture serving 1M+ users</Text>
-          <Text style={styles.description}>• Implemented CI/CD pipelines reducing deployment time by 60%</Text>
-          <Text style={styles.description}>• Mentored junior developers and conducted code reviews</Text>
-        </View>
-        <View style={styles.experienceItem}>
-          <Text style={styles.companyTitle}>Full Stack Developer</Text>
-          <Text style={styles.period}>Digital Solutions Ltd. • 2020 - 2022</Text>
-          <Text style={styles.description}>• Developed and maintained multiple client projects using React and Node.js</Text>
-          <Text style={styles.description}>• Improved application performance by 40% through optimization</Text>
-          <Text style={styles.description}>• Implemented responsive designs and accessibility features</Text>
+          <Text style={styles.companyTitle}>Senior Full Stack Software Engineer</Text>
+          <Text style={styles.period}>Axiallon Software • 2021 - Present</Text>
+          <Text style={styles.description}>• Maintain a goal-tracking behavior system used for 2,000 youth to improve self-regulation, attitude,
+            engagement with peers, and social connections.</Text>
+          <Text style={styles.description}>• Cooperated with a team of youth leaders to create a management system used to track 200 closely
+            monitored youth and behavior daily.</Text>
+          <Text style={styles.description}>• Designed and implemented an incentive reward system for youth leaders to operate with paired youth to
+            encourage improvement in behavior.</Text>
+          <Text style={styles.description}>• Created a cross-platform mobile application using Angular and Ionic to serve as a social network
+            platform for over 3,000 agriculture enthusiasts.</Text>
         </View>
       </View>
 
@@ -118,8 +118,7 @@ const ResumePDF = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Technical Skills</Text>
         <View style={styles.skills}>
-          {['JavaScript/TypeScript', 'React/Next.js', 'Node.js/Express', 'Python/Django',
-            'PostgreSQL/MongoDB', 'AWS/Docker', 'GraphQL', 'CI/CD'].map((skill, index) => (
+          {['JavaScript/TypeScript', 'Angular', 'React/Next.js', 'SpringBoot', 'Java', 'Hibernate', 'OracleDB', 'PostgreSQL'].map((skill, index) => (
             <Text key={index} style={styles.skill}>{skill}</Text>
           ))}
         </View>
@@ -129,23 +128,24 @@ const ResumePDF = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Education</Text>
         <View style={styles.experienceItem}>
-          <Text style={styles.companyTitle}>Master of Science in Computer Science</Text>
-          <Text style={styles.period}>Stanford University • 2018 - 2020</Text>
-          <Text style={styles.description}>Focus on Software Engineering and Distributed Systems</Text>
-        </View>
-        <View style={styles.experienceItem}>
-          <Text style={styles.companyTitle}>Bachelor of Science in Computer Science</Text>
-          <Text style={styles.period}>University of California, Berkeley • 2014 - 2018</Text>
-          <Text style={styles.description}>Minor in Mathematics</Text>
+          <Text style={styles.companyTitle}>Bachelor&apos;s of Software
+            Engineering</Text>
+          <Text style={styles.period}>Arizona State University • 2019 - Present</Text>
+          <Text style={styles.description}>• Maintaining a cumulative GPA of 3.44 on a 4.0 scale</Text>
+          <Text style={styles.description}>• Completed a comprehensive curriculum covering programming, software design and development,
+            database systems, data structures, algorithms, and computer architecture.</Text>
+          <Text style={styles.description}>• Acquired hands-on experience through various software development projects, working in teams, and
+            applying Agile methodologies.</Text>
+          <Text style={styles.description}>• Developed expertise in multiple programming languages including Java and TypeScript</Text>
         </View>
       </View>
 
-      {/* Certifications */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Certifications</Text>
-        <Text style={styles.description}>• AWS Certified Solutions Architect - Amazon Web Services (2023)</Text>
-        <Text style={styles.description}>• Professional Scrum Master I - Scrum.org (2022)</Text>
-      </View>
+      {/*/!* Certifications *!/*/}
+      {/*<View style={styles.section}>*/}
+      {/*  <Text style={styles.sectionTitle}>Certifications</Text>*/}
+      {/*  <Text style={styles.description}>• Complete Angular Developer, Zero to Mastery</Text>*/}
+      {/*  <Text style={styles.description}>• Complete SQL + Databases, Zero to Mastery</Text>*/}
+      {/*</View>*/}
     </Page>
   </Document>
 );
