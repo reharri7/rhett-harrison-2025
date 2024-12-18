@@ -1,0 +1,188 @@
+import CodeWindow from '@/components/ui/code-window';
+
+# The Power of TypeScript in Modern Web Development
+
+TypeScript has become an indispensable tool in modern web development, offering enhanced developer experience and improved code quality through static typing.
+
+## Why TypeScript?
+
+TypeScript extends JavaScript by adding static types, making it easier to:
+
+- Catch errors early in development
+- Improve code maintainability
+- Enhance IDE support
+- Enable better refactoring
+
+## Getting Started
+
+To add TypeScript to your project:
+
+<CodeWindow
+  code={`npm install typescript @types/node @types/react`}
+  language="bash"
+  title="Terminal"
+/>
+
+## Key Features
+
+### Type Annotations
+
+<CodeWindow
+  code={`interface User {
+  id: number;
+  name: string;
+  email: string;
+  preferences?: {
+    theme: 'light' | 'dark';
+    notifications: boolean;
+  };
+}
+
+function getUser(id: number): Promise<User> {
+  return fetch(\`/api/users/\${id}\`).then(res => res.json());
+}`}
+  language="typescript"
+  title="Type Annotations Example"
+/>
+
+### Generic Types
+
+<CodeWindow
+  code={`interface Response<T> {
+  data: T;
+  status: number;
+  message: string;
+}
+
+async function fetchData<T>(url: string): Promise<Response<T>> {
+  const res = await fetch(url);
+  return res.json();
+}
+
+// Usage
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+}
+
+const post = await fetchData<Post>('/api/posts/1');`}
+  language="typescript"
+  title="Generics Example"
+/>
+
+### Advanced Types
+
+<CodeWindow
+  code={`// Union Types
+type Status = 'pending' | 'success' | 'error';
+
+// Intersection Types
+interface HasId { id: number; }
+interface HasName { name: string; }
+type Entity = HasId & HasName;
+
+// Utility Types
+type Readonly<T> = {
+  readonly [P in keyof T]: T[P];
+};
+
+type UserPreview = Pick<User, 'id' | 'name'>;
+type OptionalUser = Partial<User>;`}
+  language="typescript"
+  title="Advanced Types Example"
+/>
+
+## Best Practices
+
+1. Use strict mode:
+
+<CodeWindow
+  code={`{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  }
+}`}
+  language="json"
+  title="tsconfig.json"
+/>
+
+2. Use Type Inference:
+
+<CodeWindow
+  code={`// Let TypeScript infer types when possible
+const numbers = [1, 2, 3]; // Type: number[]
+const user = {
+  id: 1,
+  name: 'John'
+}; // Type: { id: number; name: string; }
+
+// Use explicit types for function parameters and returns
+function add(a: number, b: number): number {
+  return a + b;
+}`}
+  language="typescript"
+  title="Type Inference Example"
+/>
+
+## Real-World Example
+
+Here's a practical example of using TypeScript in a React component:
+
+<CodeWindow
+  code={`interface TodoItem {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+interface TodoListProps {
+  items: TodoItem[];
+  onToggle: (id: number) => void;
+  onDelete: (id: number) => void;
+}
+
+function TodoList({ items, onToggle, onDelete }: TodoListProps) {
+  return (
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li key={item.id} className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={item.completed}
+            onChange={() => onToggle(item.id)}
+          />
+          <span className={item.completed ? 'line-through' : ''}>
+            {item.title}
+          </span>
+          <button
+            onClick={() => onDelete(item.id)}
+            className="text-red-500"
+          >
+            Delete
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}`}
+  language="typescript"
+  title="React Component Example"
+/>
+
+## Conclusion
+
+TypeScript is more than just a typed superset of JavaScript; it's a powerful tool that can significantly improve your development workflow and code quality. By adopting TypeScript in your projects, you'll benefit from better tooling, fewer runtime errors, and more maintainable code.
