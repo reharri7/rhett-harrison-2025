@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import {useToast} from "@/hooks/use-toast";
+import {toast} from "sonner";
+import {sendContactEmail} from "@/actions/sendContactEmail";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,19 +19,37 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  const emailIsValid = (email: string) => {
+    return /\S+@\S+\.\S+/.test(email)
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setSubmitStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    // Reset status after 3 seconds
-    setTimeout(() => setSubmitStatus('idle'), 3000);
+
+    if(!!formData.email && !!formData.message && !!formData.name && !!formData.subject) {
+      if(!emailIsValid(formData.email)) {
+        setSubmitStatus('error');
+        setIsSubmitting(false);
+        toast.error('Please enter a valid email address')
+      } else {
+        sendContactEmail(formData.email, formData.name, formData.subject, formData.message)
+          .then(() => {
+            setSubmitStatus('success');
+            setIsSubmitting(false);
+            toast.success('Message sent successfully!')
+            setFormData({ name: '', email: '', subject: '', message: '' });
+          })
+          .catch(() => {
+            setSubmitStatus('error');
+            toast.error('Please fill out all fields')
+          })
+          .finally(() => {
+            setSubmitStatus('idle');
+            setIsSubmitting(false);
+          })
+      }
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -66,40 +87,12 @@ export default function Contact() {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
-                  <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Email</p>
-                  <Link
-                    href="mailto:john@example.com"
-                    className="text-blue-600 hover:text-blue-700"
-                  >
-                    john@example.com
-                  </Link>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
-                  <Phone className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Phone</p>
-                  <Link
-                    href="tel:+1234567890"
-                    className="text-blue-600 hover:text-blue-700"
-                  >
-                    +1 (234) 567-890
-                  </Link>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
                   <MapPin className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Location</p>
                   <p className="text-gray-900 dark:text-gray-100">
-                    San Francisco, CA
+                    Sonora, CA
                   </p>
                 </div>
               </div>
@@ -111,7 +104,7 @@ export default function Contact() {
               </h3>
               <div className="flex gap-4">
                 <Link
-                  href="https://github.com"
+                  href="https://github.com/reharri7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
@@ -119,7 +112,7 @@ export default function Contact() {
                   <Github className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                 </Link>
                 <Link
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/rhettharrison"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
