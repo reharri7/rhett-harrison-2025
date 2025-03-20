@@ -16,5 +16,5 @@ const metadata = {
 };
 
 export default function TypeScriptPost() {
-  return <BlogPost metadata={metadata}><Content /></BlogPost>;
+  return <BlogPost postMetadata={metadata}><Content/></BlogPost>;
 }
