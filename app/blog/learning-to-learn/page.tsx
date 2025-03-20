@@ -12,7 +12,7 @@ const metadata = {
     name: 'Rhett Harrison',
     image: '/images/rhett_profile.jpeg',
   },
-  coverImage: '/images/blogs/learning-to-learn/learning-to-learn-cover.jpg',
+  coverImage: '/images/blogs/learning-to-learn/learning-to-learn-cover.webp',
 };
 
 export default function TypeScriptPost() {

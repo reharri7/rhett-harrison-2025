@@ -11,7 +11,22 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  images: { unoptimized: false, domains: ['images.unsplash.com'] },
+  images: {
+    unoptimized: false,
+    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+        pathname: '/.*/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/.*/**',
+      },
+    ]
+  },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };
 
