@@ -1,36 +1,20 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, Clock, Search, Tag } from 'lucide-react';
+import {motion} from 'framer-motion';
+import {ArrowRight, Calendar, Clock, Search, Tag} from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import {useState} from 'react';
 
-const categories = ['All', 'Web Development', 'TypeScript', 'React', 'Next.js', 'Backend'];
+const categories = ['All', 'Learning'];
 
 const posts = [
   {
-    title: 'Building Scalable Web Applications with Next.js',
-    excerpt: 'Learn how to build and deploy scalable web applications using Next.js and modern best practices.',
-    date: '2024-02-20',
-    readTime: '5 min read',
-    slug: 'building-scalable-web-applications',
-    category: 'Next.js',
-  },
-  {
-    title: 'The Power of TypeScript in Modern Web Development',
-    excerpt: 'Discover how TypeScript can improve your development workflow and catch errors before they reach production.',
-    date: '2024-02-15',
-    readTime: '4 min read',
-    slug: 'power-of-typescript',
-    category: 'TypeScript',
-  },
-  {
-    title: 'Mastering Tailwind CSS for Rapid UI Development',
-    excerpt: 'Tips and tricks for building beautiful user interfaces quickly with Tailwind CSS.',
-    date: '2024-02-10',
-    readTime: '6 min read',
-    slug: 'mastering-tailwind-css',
-    category: 'Web Development',
+    title: 'Learning to Learn: My Experience',
+    excerpt: 'I recently completed an online course on how to learn. Here\'s how it went',
+    date: '2025-03-19',
+    readTime: '12 min read',
+    slug: 'learning-to-learn',
+    category: 'Learning',
   },
 ];
 
@@ -48,9 +32,9 @@ export default function Blog() {
   return (
     <div className="container mx-auto px-4 py-16">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={{opacity: 0, y: 20}}
+        animate={{opacity: 1, y: 0}}
+        transition={{duration: 0.5}}
         className="text-center mb-12"
       >
         <h1 className="text-4xl font-bold text-blue-600 mb-4">Blog</h1>
@@ -84,7 +68,7 @@ export default function Blog() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full md:w-64 px-4 py-2 pl-10 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+            <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"/>
           </div>
         </div>
       </div>
@@ -93,19 +77,20 @@ export default function Blog() {
         {filteredPosts.map((post, index) => (
           <motion.article
             key={post.slug}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            initial={{opacity: 0, y: 20}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.5, delay: index * 0.1}}
             className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg"
           >
             <div className="flex flex-wrap gap-4 items-center mb-4">
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                <Tag className="h-4 w-4" />
+              <span
+                className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                <Tag className="h-4 w-4"/>
                 {post.category}
               </span>
               <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
                 <span className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-4 w-4"/>
                   {new Date(post.date).toLocaleDateString('en-US', {
                     month: 'long',
                     day: 'numeric',
@@ -113,13 +98,17 @@ export default function Blog() {
                   })}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
+                  <Clock className="h-4 w-4"/>
                   {post.readTime}
                 </span>
               </div>
             </div>
-            <h2 className="text-2xl font-semibold text-blue-600 mb-3">
-              {post.title}
+            <h2 className="text-2xl font-semibold text-blue-600 hover:text-blue-700 mb-3">
+              <Link
+                href={`/blog/${post.slug}`}
+              >
+                {post.title}
+              </Link>
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               {post.excerpt}
@@ -129,7 +118,7 @@ export default function Blog() {
               className="inline-flex items-center text-blue-600 hover:text-blue-700"
             >
               Read more
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4"/>
             </Link>
           </motion.article>
         ))}

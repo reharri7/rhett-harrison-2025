@@ -2,6 +2,7 @@
 
 import { MDXProvider } from '@mdx-js/react';
 import { ReactNode } from 'react';
+import Image from "next/image";
 
 const components = {
   h1: (props: any) => <h1 className="text-4xl font-bold mb-6" {...props} />,

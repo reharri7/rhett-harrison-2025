@@ -1,30 +1,17 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import {ArrowRight} from 'lucide-react';
+import {cn} from "@/lib/utils";
 
 const posts = [
   {
-    title: 'Building Scalable Web Applications with Next.js',
-    excerpt: 'Learn how to build and deploy scalable web applications using Next.js and modern best practices.',
-    date: '2024-02-20',
-    readTime: '5 min read',
-    slug: 'building-scalable-web-applications',
-  },
-  {
-    title: 'The Power of TypeScript in Modern Web Development',
-    excerpt: 'Discover how TypeScript can improve your development workflow and catch errors before they reach production.',
-    date: '2024-02-15',
-    readTime: '4 min read',
-    slug: 'power-of-typescript',
-  },
-  {
-    title: 'Mastering Tailwind CSS for Rapid UI Development',
-    excerpt: 'Tips and tricks for building beautiful user interfaces quickly with Tailwind CSS.',
-    date: '2024-02-10',
-    readTime: '6 min read',
-    slug: 'mastering-tailwind-css',
+    title: 'Learning to Learn: My Experience',
+    excerpt: 'I recently completed an online course on how to learn. Here\'s how it went',
+    date: '2025-03-20',
+    readTime: '12 min read',
+    slug: 'learning-to-learn',
   },
 ];
 
@@ -39,13 +26,14 @@ export default function LatestPosts() {
           Thoughts, tutorials, and insights about web development
         </p>
       </div>
-      <div className="grid md:grid-cols-3 gap-8">
+      {/* TODO: Add class md:grid-cols-3 once there are 3 blog posts*/}
+      <div className={cn("grid gap-8", posts.length > 2 && "md:grid-cols-3")}>
         {posts.map((post, index) => (
           <motion.article
             key={post.slug}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            initial={{opacity: 0, y: 20}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.5, delay: index * 0.2}}
             className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg"
           >
             <div className="mb-4">
@@ -59,8 +47,11 @@ export default function LatestPosts() {
                 </time>
                 <span>{post.readTime}</span>
               </div>
-              <h3 className="text-xl font-semibold text-blue-600 mb-2">
-                {post.title}
+              <h3 className="text-xl font-semibold text-blue-600 hover:text-blue-700 mb-2">
+                <Link
+                  href={`/blog/${post.slug}`}>
+                  {post.title}
+                </Link>
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 {post.excerpt}
@@ -71,7 +62,7 @@ export default function LatestPosts() {
               className="inline-flex items-center text-blue-600 hover:text-blue-700"
             >
               Read more
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4"/>
             </Link>
           </motion.article>
         ))}

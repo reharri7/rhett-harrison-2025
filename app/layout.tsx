@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     siteName: "Rhett Harrison",
     images: [
       {
-        url: "/images/og.png",
-        height: "630",
-        width: "1200",
-        type: "image/png",
-        alt: "Cedar Peak Technologies",
+        url: "/images/rhett_profile.jpeg",
+        height: "512",
+        width: "512",
+        type: "image/jpeg",
+        alt: "Rhett Profile Picture",
       }
     ]
   },
@@ -33,17 +33,20 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: '@site',
     creator: '@creator',
-    title: 'Cedar Peak Technologies',
-    description: 'Serving The Motherlode\'s Software needs.',
+    title: 'Rhett Harrison',
+    description: 'Senior Software Engineer',
     images: {
-      url: "/images/og.png",
-      height: "630",
-      width: "1200",
-      type: "image/png",
-      alt: "Cedar Peak Technologies",
+      url: "/images/rhett_profile.jpeg",
+      height: "512",
+      width: "512",
+      type: "image/jpeg",
+      alt: "Rhett Profile Picture",
     }
   },
-  appleWebApp: { capable: true, title: "Cedar Peak Technologies", statusBarStyle: "black-translucent" }
+  appleWebApp: { capable: true, title: "Rhett Harrison", statusBarStyle: "black-translucent" },
+  icons: {
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
