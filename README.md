@@ -91,6 +91,7 @@ For immediate improvements, focus on these high-impact, low-effort tasks:
 This project uses GitHub Actions for continuous integration and deployment:
 
 - **CI Workflow** - Runs linting, tests with coverage, and builds the application on every push and pull request
+- **Lighthouse CI** - Runs Lighthouse audits to ensure performance, accessibility, best practices, and SEO standards
 - **Pull Request Validation** - Validates PR titles against conventional commit standards and checks for dependency
   vulnerabilities
 - **Deploy Preview** - Creates a preview deployment for each pull request using Vercel
@@ -106,6 +107,14 @@ npm run ci
 ```
 
 This will run the same checks as the CI workflow: linting, tests with coverage, and building the application.
+
+You can also run Lighthouse CI checks locally:
+
+```bash
+npm run lighthouse
+```
+
+This will build the application and run Lighthouse CI to audit performance, accessibility, best practices, and SEO.
 
 ## Contributing
 
