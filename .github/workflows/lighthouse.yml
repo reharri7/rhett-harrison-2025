@@ -21,6 +21,8 @@ jobs:
         run: npm run build
       - name: Run Lighthouse CI
         run: npm run lhci
+      - name: Debug .lighthouseci directory
+        run: ls -al .lighthouseci
       - name: Upload Lighthouse artifacts
         uses: actions/upload-artifact@v3
         with:
