@@ -38,6 +38,7 @@ This portfolio website is built with:
 - `hooks/` - Custom React hooks
 - `actions/` - Server actions for Next.js App Router
 - `__tests__/` - Test files
+- `.github/workflows/` - GitHub Actions CI/CD workflows
 
 ## Improvement Plan
 
@@ -84,6 +85,27 @@ For immediate improvements, focus on these high-impact, low-effort tasks:
 - Use semantic HTML elements
 - Add appropriate ARIA attributes
 - Test with keyboard navigation
+
+## Continuous Integration and Deployment
+
+This project uses GitHub Actions for continuous integration and deployment:
+
+- **CI Workflow** - Runs linting, tests with coverage, and builds the application on every push and pull request
+- **Pull Request Validation** - Validates PR titles against conventional commit standards and checks for dependency
+  vulnerabilities
+- **Deploy Preview** - Creates a preview deployment for each pull request using Vercel
+
+For more details, see the [GitHub Actions README](./.github/workflows/README.md).
+
+### Running CI Checks Locally
+
+You can run the CI checks locally before pushing your changes:
+
+```bash
+npm run ci
+```
+
+This will run the same checks as the CI workflow: linting, tests with coverage, and building the application.
 
 ## Contributing
 
