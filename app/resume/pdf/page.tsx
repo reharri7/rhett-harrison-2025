@@ -1,16 +1,13 @@
 'use client';
 
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
-const PDFViewer = dynamic(
-  () => import("@react-pdf/renderer").then((mod) => mod.PDFViewer),
-  {
-    ssr: false,
-    loading: () => <p>Loading...</p>,
-  },
-);
+const PDFViewer = dynamic(() => import('@react-pdf/renderer').then(mod => mod.PDFViewer), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
 
 const styles = StyleSheet.create({
   page: {
@@ -89,11 +86,12 @@ const ResumePDF = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Professional Summary</Text>
         <Text style={styles.description}>
-          Full Stack Software Engineer with three years of experience designing, developing, and maintaining innovative
-          products across government and agriculture industries. My expertise spans various platforms and programming
-          languages, enabling me to deliver high-quality solutions. I excel in self-management during independent
-          projects, thrive in collaborative team settings, and have mentored multiple software engineers, fostering
-          professional growth. Passionate about leveraging technology to solve complex problems.
+          Full Stack Software Engineer with three years of experience designing, developing, and
+          maintaining innovative products across government and agriculture industries. My expertise
+          spans various platforms and programming languages, enabling me to deliver high-quality
+          solutions. I excel in self-management during independent projects, thrive in collaborative
+          team settings, and have mentored multiple software engineers, fostering professional
+          growth. Passionate about leveraging technology to solve complex problems.
         </Text>
       </View>
 
@@ -103,14 +101,22 @@ const ResumePDF = () => (
         <View style={styles.experienceItem}>
           <Text style={styles.companyTitle}>Senior Full Stack Software Engineer</Text>
           <Text style={styles.period}>Axiallon Software • 2021 - Present</Text>
-          <Text style={styles.description}>• Maintain a goal-tracking behavior system used for 2,000 youth to improve self-regulation, attitude,
-            engagement with peers, and social connections.</Text>
-          <Text style={styles.description}>• Cooperated with a team of youth leaders to create a management system used to track 200 closely
-            monitored youth and behavior daily.</Text>
-          <Text style={styles.description}>• Designed and implemented an incentive reward system for youth leaders to operate with paired youth to
-            encourage improvement in behavior.</Text>
-          <Text style={styles.description}>• Created a cross-platform mobile application using Angular and Ionic to serve as a social network
-            platform for over 3,000 agriculture enthusiasts.</Text>
+          <Text style={styles.description}>
+            • Maintain a goal-tracking behavior system used for 2,000 youth to improve
+            self-regulation, attitude, engagement with peers, and social connections.
+          </Text>
+          <Text style={styles.description}>
+            • Cooperated with a team of youth leaders to create a management system used to track
+            200 closely monitored youth and behavior daily.
+          </Text>
+          <Text style={styles.description}>
+            • Designed and implemented an incentive reward system for youth leaders to operate with
+            paired youth to encourage improvement in behavior.
+          </Text>
+          <Text style={styles.description}>
+            • Created a cross-platform mobile application using Angular and Ionic to serve as a
+            social network platform for over 3,000 agriculture enthusiasts.
+          </Text>
         </View>
       </View>
 
@@ -118,8 +124,19 @@ const ResumePDF = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Technical Skills</Text>
         <View style={styles.skills}>
-          {['JavaScript/TypeScript', 'Angular', 'React/Next.js', 'SpringBoot', 'Java', 'Hibernate', 'OracleDB', 'PostgreSQL'].map((skill, index) => (
-            <Text key={index} style={styles.skill}>{skill}</Text>
+          {[
+            'JavaScript/TypeScript',
+            'Angular',
+            'React/Next.js',
+            'SpringBoot',
+            'Java',
+            'Hibernate',
+            'OracleDB',
+            'PostgreSQL',
+          ].map((skill, index) => (
+            <Text key={index} style={styles.skill}>
+              {skill}
+            </Text>
           ))}
         </View>
       </View>
@@ -128,15 +145,22 @@ const ResumePDF = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Education</Text>
         <View style={styles.experienceItem}>
-          <Text style={styles.companyTitle}>Bachelor&apos;s of Software
-            Engineering</Text>
+          <Text style={styles.companyTitle}>Bachelor&apos;s of Software Engineering</Text>
           <Text style={styles.period}>Arizona State University • 2019 - Present</Text>
-          <Text style={styles.description}>• Maintaining a cumulative GPA of 3.44 on a 4.0 scale</Text>
-          <Text style={styles.description}>• Completed a comprehensive curriculum covering programming, software design and development,
-            database systems, data structures, algorithms, and computer architecture.</Text>
-          <Text style={styles.description}>• Acquired hands-on experience through various software development projects, working in teams, and
-            applying Agile methodologies.</Text>
-          <Text style={styles.description}>• Developed expertise in multiple programming languages including Java and TypeScript</Text>
+          <Text style={styles.description}>
+            • Maintaining a cumulative GPA of 3.44 on a 4.0 scale
+          </Text>
+          <Text style={styles.description}>
+            • Completed a comprehensive curriculum covering programming, software design and
+            development, database systems, data structures, algorithms, and computer architecture.
+          </Text>
+          <Text style={styles.description}>
+            • Acquired hands-on experience through various software development projects, working in
+            teams, and applying Agile methodologies.
+          </Text>
+          <Text style={styles.description}>
+            • Developed expertise in multiple programming languages including Java and TypeScript
+          </Text>
         </View>
       </View>
 

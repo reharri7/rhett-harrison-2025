@@ -40,8 +40,8 @@ export default function About() {
         <div>
           <h1 className="text-4xl font-bold text-blue-600 mb-6">About Me</h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-            Hi! I&apos;m Rhett Harrison, a passionate full-stack developer with 3 years of experience
-            in building web applications. I specialize in creating responsive,
+            Hi! I&apos;m Rhett Harrison, a passionate full-stack developer with 3 years of
+            experience in building web applications. I specialize in creating responsive,
             user-friendly websites using modern technologies.
           </p>
           <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
@@ -54,6 +54,10 @@ export default function About() {
             src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=800&h=1000&fit=crop"
             alt="Rhett Harrison"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjEwMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSIjZjNmNGY2Ii8+PC9zdmc+"
             className="object-cover"
           />
         </div>
@@ -72,15 +76,15 @@ export default function About() {
         </h2>
         <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            My journey in web development began during my computer science studies
-            at Arizona State University. What started as a curiosity quickly turned into
-            a passion for creating innovative digital solutions.
+            My journey in web development began during my computer science studies at Arizona State
+            University. What started as a curiosity quickly turned into a passion for creating
+            innovative digital solutions.
           </p>
           <p className="text-gray-600 dark:text-gray-300">
-            Over the years, I&apos;ve had the privilege of working with startups and
-            established agencies, helping them build scalable web applications
-            and implement modern development practices. I&apos;m constantly learning
-            and exploring new technologies to stay at the forefront of web development.
+            Over the years, I&apos;ve had the privilege of working with startups and established
+            agencies, helping them build scalable web applications and implement modern development
+            practices. I&apos;m constantly learning and exploring new technologies to stay at the
+            forefront of web development.
           </p>
         </div>
       </motion.div>
@@ -93,7 +97,7 @@ export default function About() {
       >
         <h2 className="text-3xl font-bold text-blue-600 mb-8">Technical Skills</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skills.map((skill) => {
+          {skills.map(skill => {
             const Icon = skill.icon;
             return (
               <div
@@ -107,7 +111,7 @@ export default function About() {
                   </h3>
                 </div>
                 <ul className="space-y-2">
-                  {skill.items.map((item) => (
+                  {skill.items.map(item => (
                     <li
                       key={item}
                       className="text-gray-600 dark:text-gray-300 flex items-center gap-2"

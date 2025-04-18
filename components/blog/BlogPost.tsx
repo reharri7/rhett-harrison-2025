@@ -6,7 +6,6 @@ import {ReactNode} from 'react';
 import {MDXProvider} from '@mdx-js/react';
 import {useMDXComponents} from '@/mdx-components';
 
-
 interface Author {
   name: string;
   image: string;
@@ -25,7 +24,6 @@ interface BlogPostProps {
   postMetadata: BlogPostMetadata;
   children: ReactNode;
 }
-
 
 export default function BlogPost({postMetadata, children}: BlogPostProps) {
   const components = useMDXComponents({});
@@ -76,9 +74,7 @@ export default function BlogPost({postMetadata, children}: BlogPostProps) {
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-blue-600 mb-6">
-            {postMetadata.title}
-          </h1>
+          <h1 className="text-4xl font-bold text-blue-600 mb-6">{postMetadata.title}</h1>
 
           <div className="flex items-center gap-4 mb-8">
             <div className="relative w-12 h-12 rounded-full overflow-hidden">
@@ -93,16 +89,12 @@ export default function BlogPost({postMetadata, children}: BlogPostProps) {
               <div className="font-semibold text-gray-900 dark:text-gray-100">
                 {postMetadata.author.name}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                Author
-              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Author</div>
             </div>
           </div>
 
           <article className="prose prose-blue dark:prose-invert max-w-none">
-            <MDXProvider components={components}>
-              {children}
-            </MDXProvider>
+            <MDXProvider components={components}>{children}</MDXProvider>
           </article>
         </div>
       </motion.div>

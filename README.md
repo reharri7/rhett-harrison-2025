@@ -32,7 +32,7 @@ This portfolio website is built with:
 
 - `app/` - Next.js App Router pages and layouts
 - `components/` - Reusable React components
-    - `ui/` - UI components (buttons, inputs, etc.)
+  - `ui/` - UI components (buttons, inputs, etc.)
 - `lib/` - Utility functions and shared code
 - `public/` - Static assets
 - `hooks/` - Custom React hooks

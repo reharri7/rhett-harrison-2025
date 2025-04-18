@@ -13,15 +13,13 @@ export default function Hero() {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h1 className="text-5xl font-bold text-blue-600 mb-6">
-          Rhett Harrison
-        </h1>
+        <h1 className="text-5xl font-bold text-blue-600 mb-6">Rhett Harrison</h1>
         <h2 className="text-3xl font-semibold text-blue-800 dark:text-blue-400 mb-4">
           Senior Software Engineer
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-          Building beautiful, responsive, and user-friendly web applications
-          with modern technologies.
+          Building beautiful, responsive, and user-friendly web applications with modern
+          technologies.
         </p>
         <div className="flex justify-center gap-6 mb-12">
           <Link

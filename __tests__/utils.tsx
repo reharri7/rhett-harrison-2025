@@ -6,18 +6,10 @@ import {ThemeProvider} from '@/components/theme-provider';
  * Custom render function that wraps the component with necessary providers
  * This makes testing components that depend on context providers easier
  */
-function render(
-  ui: React.ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>
-) {
+function render(ui: React.ReactElement, options?: Omit<RenderOptions, 'wrapper'>) {
   const Wrapper = ({children}: { children: React.ReactNode }) => {
     return (
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
         {children}
       </ThemeProvider>
     );

@@ -54,9 +54,9 @@ Create testing utilities to make writing tests easier and more consistent:
 
 ```tsx
 // __tests__/test-utils.tsx
-import React from 'react'
-import {render as rtlRender} from '@testing-library/react'
-import {ThemeProvider} from '@/components/theme-provider'
+import React from 'react';
+import {render as rtlRender} from '@testing-library/react';
+import {ThemeProvider} from '@/components/theme-provider';
 
 function render(ui, options = {}) {
   return rtlRender(
@@ -64,11 +64,11 @@ function render(ui, options = {}) {
       {ui}
     </ThemeProvider>,
     options
-  )
+  );
 }
 
-export * from '@testing-library/react'
-export {render}
+export * from '@testing-library/react';
+export {render};
 ```
 
 ## 2. Performance Optimizations
@@ -100,19 +100,19 @@ Implement code splitting for larger components:
 **Example:**
 
 ```tsx
-import dynamic from 'next/dynamic'
-import {Suspense} from 'react'
+import dynamic from 'next/dynamic';
+import {Suspense} from 'react';
 
 const DynamicComponent = dynamic(() => import('@/components/HeavyComponent'), {
   loading: () => <p>Loading...</p>,
-})
+});
 
 export default function Page() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <DynamicComponent/>
     </Suspense>
-  )
+  );
 }
 ```
 
@@ -147,19 +147,19 @@ Conduct a thorough accessibility audit:
 
 ```tsx
 // __tests__/accessibility.test.tsx
-import {render} from '@testing-library/react'
-import {axe, toHaveNoViolations} from 'jest-axe'
-import {Button} from '@/components/ui/button'
+import {render} from '@testing-library/react';
+import {axe, toHaveNoViolations} from 'jest-axe';
+import {Button} from '@/components/ui/button';
 
-expect.extend(toHaveNoViolations)
+expect.extend(toHaveNoViolations);
 
 describe('Button Accessibility', () => {
   it('should not have accessibility violations', async () => {
-    const {container} = render(<Button>Test</Button>)
-    const results = await axe(container)
-    expect(results).toHaveNoViolations()
-  })
-})
+    const {container} = render(<Button>Test</Button>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
 ```
 
 ### 3.2 Keyboard Navigation
@@ -265,7 +265,7 @@ Add comprehensive documentation for components:
 
 **Example:**
 
-```tsx
+````tsx
 /**
  * Button component with various styles and states.
  *
@@ -276,40 +276,43 @@ Add comprehensive documentation for components:
 
 */
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-/**
+  /**
 
 * The visual style of the button
 * @default "default"
   */
-  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
 
-/**
+  /**
 
 * The size of the button
 * @default "default"
   */
-  size?: "default" | "sm" | "lg" | "icon";
-  }
-
-```
+  size?: 'default' | 'sm' | 'lg' | 'icon';
+}
+````
 
 ### 5.2 Project Documentation
+
 **Priority: Medium | Effort: Medium**
 
 Improve overall project documentation:
 
 **Implementation Steps:**
+
 1. Create a comprehensive README.md
 2. Add documentation for project architecture
 3. Document data flow and state management
 4. Add contribution guidelines
 
 ### 5.3 Code Comments
+
 **Priority: Medium | Effort: Low**
 
 Improve code comments throughout the codebase:
 
 **Implementation Steps:**
+
 1. Add comments for complex logic
 2. Document non-obvious decisions
 3. Add TODO comments for future improvements
@@ -317,16 +320,19 @@ Improve code comments throughout the codebase:
 ## 6. Developer Experience Improvements
 
 ### 6.1 Enhanced Linting and Formatting
+
 **Priority: Medium | Effort: Low**
 
 Improve code quality tools:
 
 **Implementation Steps:**
+
 1. Add ESLint plugins for React, Hooks, and Accessibility
 2. Configure Prettier for consistent formatting
 3. Add pre-commit hooks with husky and lint-staged
 
 **Example:**
+
 ```json
 // package.json
 "devDependencies": {
@@ -446,29 +452,29 @@ Improve error handling throughout the application:
 
 ```tsx
 // app/error.tsx
-'use client'
+'use client';
 
-import {useEffect} from 'react'
-import {Button} from '@/components/ui/button'
+import {useEffect} from 'react';
+import {Button} from '@/components/ui/button';
 
 export default function Error({
                                 error,
                                 reset,
                               }: {
-  error: Error & { digest?: string }
-  reset: () => void
+  error: Error & { digest?: string };
+  reset: () => void;
 }) {
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error(error)
-  }, [error])
+    console.error(error);
+  }, [error]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
       <h2 className="text-xl font-bold">Something went wrong!</h2>
       <Button onClick={reset}>Try again</Button>
     </div>
-  )
+  );
 }
 ```
 

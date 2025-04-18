@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from './test-utils';
+import {render} from './utils';
 import {axe, toHaveNoViolations} from 'jest-axe';
 import {Button} from '@/components/ui/button';
 
@@ -31,14 +31,12 @@ describe('Accessibility Tests', () => {
 
   // This test demonstrates how to test for specific accessibility rules
   it('Button should have sufficient color contrast', async () => {
-    const {container} = render(
-      <Button variant="default">High Contrast Button</Button>
-    );
+    const {container} = render(<Button variant="default">High Contrast Button</Button>);
 
     const results = await axe(container, {
       rules: {
-        'color-contrast': {enabled: true}
-      }
+        'color-contrast': {enabled: true},
+      },
     });
 
     expect(results).toHaveNoViolations();
