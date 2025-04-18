@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rhettharrison.com'),
   title: 'Rhett Harrison | Senior Software Engineer',
   description: 'Full-stack Senior Software Engineer specializing in modern web technologies',
   applicationName: 'Rhett Harrison',
