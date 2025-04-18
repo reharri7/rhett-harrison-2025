@@ -98,6 +98,33 @@ This project uses GitHub Actions for continuous integration and deployment:
 
 For more details, see the [GitHub Actions README](./.github/workflows/README.md).
 
+## Analytics
+
+This project includes analytics to track user behavior and improve the user experience:
+
+### Vercel Analytics
+
+The project uses [Vercel Analytics](https://vercel.com/analytics) for privacy-friendly web analytics. This is
+automatically enabled and requires no configuration.
+
+### Google Analytics
+
+The project also supports Google Analytics for more detailed analytics:
+
+1. Create a Google Analytics 4 property in the [Google Analytics console](https://analytics.google.com/)
+2. Get your Measurement ID (starts with G-)
+3. Add your Measurement ID to the `.env` file:
+   ```
+   NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+   ```
+
+The Google Analytics integration:
+
+- Automatically tracks page views
+- Works with Next.js App Router
+- Respects user privacy settings
+- Only loads if the Measurement ID is provided
+
 ### Running CI Checks Locally
 
 You can run the CI checks locally before pushing your changes:
