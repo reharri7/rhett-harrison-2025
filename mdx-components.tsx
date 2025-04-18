@@ -1,15 +1,13 @@
 'use client';
 
-import type { MDXComponents } from 'mdx/types';
+import type {MDXComponents} from 'mdx/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import CodeWindow from '@/components/ui/code-window';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    h1: ({ children }) => (
-      <h1 className="text-4xl font-bold text-blue-600 mb-6">{children}</h1>
-    ),
+    h1: ({children}) => <h1 className="text-4xl font-bold text-blue-600 mb-6">{children}</h1>,
     h2: ({ children }) => (
       <h2 className="text-3xl font-bold text-blue-600 mt-8 mb-4">{children}</h2>
     ),
@@ -19,20 +17,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     p: ({ children }) => (
       <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{children}</p>
     ),
-    ul: ({ children }) => (
-      <ul className="list-disc list-inside mb-4 space-y-2 ml-4">{children}</ul>
-    ),
+    ul: ({children}) => <ul className="list-disc list-inside mb-4 space-y-2 ml-4">{children}</ul>,
     ol: ({ children }) => (
       <ol className="list-decimal list-inside mb-4 space-y-2 ml-4">{children}</ol>
     ),
-    li: ({ children }) => (
-      <li className="text-gray-600 dark:text-gray-300">{children}</li>
-    ),
+    li: ({children}) => <li className="text-gray-600 dark:text-gray-300">{children}</li>,
     a: ({ href, children }) => (
-      <Link 
-        href={href || '#'} 
-        className="text-blue-600 hover:text-blue-700 underline"
-      >
+      <Link href={href || '#'} className="text-blue-600 hover:text-blue-700 underline">
         {children}
       </Link>
     ),
@@ -41,8 +32,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         <Image
           src={src || ''}
           alt={alt || ''}
-          width={width as number || 800}
-          height={height as number || 400}
+          width={(width as number) || 800}
+          height={(height as number) || 400}
           className="rounded-lg"
         />
       </div>
@@ -59,21 +50,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       }
       // For code blocks with language specified
       const language = className.replace('language-', '');
-      return (
-        <CodeWindow
-          code={children as string}
-          language={language}
-          showLineNumbers={true}
-        />
-      );
+      return <CodeWindow code={children as string} language={language} showLineNumbers={true}/>;
     },
     CodeWindow: ({ code, language, title }) => (
-      <CodeWindow
-        code={code}
-        language={language}
-        title={title}
-        showLineNumbers={true}
-      />
+      <CodeWindow code={code} language={language} title={title} showLineNumbers={true}/>
     ),
     ...components,
   };

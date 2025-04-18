@@ -3,12 +3,12 @@
 import {motion} from 'framer-motion';
 import Link from 'next/link';
 import {ArrowRight} from 'lucide-react';
-import {cn} from "@/lib/utils";
+import {cn} from '@/lib/utils';
 
 const posts = [
   {
     title: 'Learning to Learn: My Experience',
-    excerpt: 'I recently completed an online course on how to learn. Here\'s how it went',
+    excerpt: "I recently completed an online course on how to learn. Here's how it went",
     date: '2025-03-20',
     readTime: '12 min read',
     slug: 'learning-to-learn',
@@ -19,15 +19,13 @@ export default function LatestPosts() {
   return (
     <section className="py-20">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-blue-600 mb-4">
-          Latest Blog Posts
-        </h2>
+        <h2 className="text-3xl font-bold text-blue-600 mb-4">Latest Blog Posts</h2>
         <p className="text-gray-600 dark:text-gray-300">
           Thoughts, tutorials, and insights about web development
         </p>
       </div>
       {/* TODO: Add class md:grid-cols-3 once there are 3 blog posts*/}
-      <div className={cn("grid gap-8", posts.length > 2 && "md:grid-cols-3")}>
+      <div className={cn('grid gap-8', posts.length > 2 && 'md:grid-cols-3')}>
         {posts.map((post, index) => (
           <motion.article
             key={post.slug}
@@ -48,14 +46,9 @@ export default function LatestPosts() {
                 <span>{post.readTime}</span>
               </div>
               <h3 className="text-xl font-semibold text-blue-600 hover:text-blue-700 mb-2">
-                <Link
-                  href={`/blog/${post.slug}`}>
-                  {post.title}
-                </Link>
+                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {post.excerpt}
-              </p>
+              <p className="text-gray-600 dark:text-gray-300">{post.excerpt}</p>
             </div>
             <Link
               href={`/blog/${post.slug}`}

@@ -2,7 +2,7 @@ const withMDX = require('@next/mdx')({
   options: {
     remarkPlugins: [],
     rehypePlugins: [],
-    providerImportSource: "@mdx-js/react",
+    providerImportSource: '@mdx-js/react',
   },
 });
 
@@ -25,7 +25,7 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
         pathname: '/.*/**',
       },
-    ]
+    ],
   },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };

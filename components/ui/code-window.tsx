@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import Prism from 'prismjs';
-import { ClipboardCopy } from 'lucide-react';
+import {ClipboardCopy} from 'lucide-react';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-javascript';
@@ -33,7 +33,8 @@ export default function CodeWindow({
   }, [code]);
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(code.trim())
+    navigator.clipboard
+      .writeText(code.trim())
       .then(() => toast.success('Code copied to clipboard successfully!'))
       .catch(() => toast.error('Failed to copy code to clipboard!'));
   };
@@ -44,20 +45,13 @@ export default function CodeWindow({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {title && (
-        <div className="bg-gray-800 px-4 py-2 text-gray-200 text-sm">
-          {title}
-        </div>
-      )}
+      {title && <div className="bg-gray-800 px-4 py-2 text-gray-200 text-sm">{title}</div>}
       <pre className={`${showLineNumbers ? 'line-numbers' : ''}`}>
         <code className={`language-${language}`}>{code.trim()}</code>
       </pre>
       {isHovered && (
         <div className="absolute top-10 right-0 mt-2 mr-2">
-          <button
-            className="bg-gray-800 text-gray-200 p-1 rounded"
-            onClick={copyToClipboard}
-          >
+          <button className="bg-gray-800 text-gray-200 p-1 rounded" onClick={copyToClipboard}>
             <ClipboardCopy className="w-5 h-5" />
           </button>
         </div>

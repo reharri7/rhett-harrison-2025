@@ -4,8 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Rhett Harrison',
     short_name: 'RH',
-    description:
-      "Rhett Harrison | Senior Full-Stack Software Engineer",
+    description: 'Rhett Harrison | Senior Full-Stack Software Engineer',
     start_url: '/',
     display: 'standalone',
     background_color: '#020817',
@@ -43,5 +42,4 @@ export default function manifest(): MetadataRoute.Manifest {
       },
     ],
   };
-
 }

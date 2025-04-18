@@ -1,12 +1,15 @@
 'use client';
 
-import { MDXProvider } from '@mdx-js/react';
-import { ReactNode } from 'react';
-import Image from "next/image";
+import {MDXProvider} from '@mdx-js/react';
+import {ReactNode} from 'react';
 
+// eslint-disable-next-line jsx-a11y/heading-has-content
 const components = {
+  // eslint-disable-next-line jsx-a11y/heading-has-content
   h1: (props: any) => <h1 className="text-4xl font-bold mb-6" {...props} />,
+  // eslint-disable-next-line jsx-a11y/heading-has-content
   h2: (props: any) => <h2 className="text-3xl font-bold mt-8 mb-4" {...props} />,
+  // eslint-disable-next-line jsx-a11y/heading-has-content
   h3: (props: any) => <h3 className="text-2xl font-bold mt-6 mb-3" {...props} />,
   p: (props: any) => <p className="mb-4" {...props} />,
   code: (props: any) => <code className="bg-gray-100 dark:bg-gray-800 rounded px-1" {...props} />,

@@ -1,5 +1,4 @@
 import Hero from '@/components/Hero';
-import FeaturedProjects from '@/components/FeaturedProjects';
 import LatestPosts from '@/components/LatestPosts';
 
 export default function Home() {

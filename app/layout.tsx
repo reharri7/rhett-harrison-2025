@@ -4,22 +4,17 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import {ThemeProvider} from '@/components/theme-provider';
-import {Toaster} from "sonner";
-import {Analytics} from "@vercel/analytics/react"
+import {Toaster} from 'sonner';
+import {Analytics} from '@vercel/analytics/react';
 import {metadata as mData} from '../lib/metadata';
-
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  ...mData
-}
+  ...mData,
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
@@ -30,14 +25,22 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Analytics />
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md"
+          >
+            Skip to main content
+          </a>
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow">{children}</main>
+            <main id="main-content" className="flex-grow">
+              {children}
+            </main>
             <Footer />
           </div>
           <Toaster
-            theme={"dark"}
-            position={"bottom-center"}
+            theme={'dark'}
+            position={'bottom-center'}
             toastOptions={{
               classNames: {
                 error: 'bg-red-400',
@@ -45,7 +48,8 @@ export default function RootLayout({
                 warning: 'bg-yellow-400',
                 info: 'bg-blue-400',
               },
-            }}/>
+            }}
+          />
         </ThemeProvider>
       </body>
     </html>
