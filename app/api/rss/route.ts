@@ -36,7 +36,7 @@ export async function GET() {
       id: url,
       link: url,
       description: post.excerpt,
-      content: post.content,
+      content: post.content || '',
       author: [author],
       contributor: [author],
       date: new Date(post.date),
