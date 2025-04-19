@@ -75,9 +75,57 @@ For immediate improvements, focus on these high-impact, low-effort tasks:
 
 ### Testing
 
-- Write tests for all new components
-- Follow the pattern in `__tests__/Button.test.tsx`
-- Run tests with `npm test`
+This project uses Jest and React Testing Library for testing React components. It also includes accessibility testing
+with jest-axe.
+
+#### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+#### Testing Utilities
+
+The project includes several testing utilities to make writing tests easier:
+
+- `__tests__/utils.tsx` - Custom render function that wraps components with necessary providers
+- `__tests__/a11y-test-utils.tsx` - Utilities for accessibility testing with jest-axe
+
+Example usage:
+
+```tsx
+// Import the custom render function
+import { render, screen, fireEvent } from '@/tests/utils';
+// Import the accessibility testing utility
+import { checkA11y } from '@/tests/a11y-test-utils';
+
+// Use the custom render function
+render(<MyComponent />);
+
+// Test accessibility
+await checkA11y(<MyComponent />);
+```
+
+#### Test Templates
+
+The project includes templates for component and integration tests:
+
+- `__tests__/templates/component-test-template.tsx` - Template for component tests
+- `__tests__/templates/integration-test-template.tsx` - Template for integration tests
+
+Use these templates as a starting point for new tests to ensure consistency and comprehensive test coverage.
+
+#### Coverage Requirements
+
+The project has a coverage threshold of 70% for branches, functions, lines, and statements. Coverage reports are
+generated when running `npm run test:coverage` and are uploaded to Codecov in the CI pipeline.
 
 ### Accessibility
 
@@ -90,7 +138,8 @@ For immediate improvements, focus on these high-impact, low-effort tasks:
 
 This project uses GitHub Actions for continuous integration and deployment:
 
-- **CI Workflow** - Runs linting, tests with coverage, and builds the application on every push and pull request
+- **CI Workflow** - Runs linting, tests with coverage, uploads coverage reports to Codecov, and builds the application
+  on every push and pull request
 - **Lighthouse CI** - Runs Lighthouse audits to ensure performance, accessibility, best practices, and SEO standards
 - **Pull Request Validation** - Validates PR titles against conventional commit standards and checks for dependency
   vulnerabilities

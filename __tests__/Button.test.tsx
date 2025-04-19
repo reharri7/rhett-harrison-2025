@@ -1,6 +1,7 @@
 import React from 'react';
-import {fireEvent, render, screen} from '@testing-library/react';
+import {fireEvent, render, screen} from './utils';
 import {Button} from '@/components/ui/button';
+import {checkA11y} from './a11y-test-utils';
 
 describe('Button Component', () => {
   it('renders correctly', () => {
@@ -31,5 +32,21 @@ describe('Button Component', () => {
     const button = screen.getByRole('button', {name: /disabled button/i});
 
     expect(button).toBeDisabled();
+  });
+
+  it('has no accessibility violations', async () => {
+    await checkA11y(<Button>Accessible Button</Button>);
+  });
+
+  it('has no accessibility violations when disabled', async () => {
+    await checkA11y(<Button disabled>Disabled Button</Button>);
+  });
+
+  it('has no accessibility violations with different variants', async () => {
+    await checkA11y(<Button variant="destructive">Destructive Button</Button>);
+    await checkA11y(<Button variant="outline">Outline Button</Button>);
+    await checkA11y(<Button variant="secondary">Secondary Button</Button>);
+    await checkA11y(<Button variant="ghost">Ghost Button</Button>);
+    await checkA11y(<Button variant="link">Link Button</Button>);
   });
 });
