@@ -36,3 +36,10 @@ export async function checkA11y(
   const results = await axe(container, options);
   expect(results).toHaveNoViolations();
 }
+
+// Add a simple test to make Jest happy
+describe('checkA11y utility', () => {
+  it('exports a function', () => {
+    expect(typeof checkA11y).toBe('function');
+  });
+});

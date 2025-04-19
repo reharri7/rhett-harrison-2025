@@ -117,7 +117,8 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "jest --findRelatedTests --passWithNoTests"
     ],
     "*.{json,css,md}": [
       "prettier --write"
