@@ -125,6 +125,58 @@ The Google Analytics integration:
 - Respects user privacy settings
 - Only loads if the Measurement ID is provided
 
+## Component Documentation with Storybook
+
+This project uses [Storybook](https://storybook.js.org/) for component documentation and development:
+
+### Running Storybook Locally
+
+```bash
+npm run storybook
+```
+
+This will start Storybook on [http://localhost:6006](http://localhost:6006).
+
+### Building Storybook
+
+```bash
+npm run build-storybook
+```
+
+This will create a static build of Storybook in the `storybook-static` directory.
+
+### Deployed Storybook
+
+The Storybook documentation is automatically deployed to GitHub Pages when changes are pushed to the main branch. You
+can view the latest version at:
+
+`https://[your-github-username].github.io/[repository-name]/`
+
+### Adding Stories
+
+To document a component, create a `.stories.tsx` file next to the component:
+
+```tsx
+// Example: components/ui/MyComponent.stories.tsx
+import type {Meta, StoryObj} from '@storybook/react';
+import {MyComponent} from './MyComponent';
+
+const meta: Meta<typeof MyComponent> = {
+  title: 'UI/MyComponent',
+  component: MyComponent,
+  tags: ['autodocs'],
+};
+
+export default meta;
+type Story = StoryObj<typeof MyComponent>;
+
+export const Default: Story = {
+  args: {
+    // Component props here
+  },
+};
+```
+
 ### Running CI Checks Locally
 
 You can run the CI checks locally before pushing your changes:
@@ -142,6 +194,14 @@ npm run lighthouse
 ```
 
 This will build the application and run Lighthouse CI to audit performance, accessibility, best practices, and SEO.
+
+You can test the Storybook build locally:
+
+```bash
+npm run test:storybook
+```
+
+This will build Storybook to ensure that it compiles correctly.
 
 ## Contributing
 

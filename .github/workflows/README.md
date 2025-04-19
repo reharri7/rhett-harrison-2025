@@ -13,6 +13,14 @@ The CI workflow runs on push to the main branch and on pull requests. It perform
 - Runs tests with coverage
 - Builds the application
 
+### Storybook (storybook.yml)
+
+The Storybook workflow runs on push to the main branch. It performs the following tasks:
+
+- Installs dependencies
+- Builds Storybook
+- Deploys Storybook to GitHub Pages
+
 ## Local Development
 
 To test GitHub Actions workflows locally, you can use [act](https://github.com/nektos/act).
@@ -32,6 +40,9 @@ act pull_request -j validate
 
 # Run the Deploy Preview workflow
 act pull_request -j deploy-preview
+
+# Run the Storybook workflow
+act -j deploy
 ```
 
 You can also run Lighthouse CI locally:
