@@ -75,9 +75,57 @@ For immediate improvements, focus on these high-impact, low-effort tasks:
 
 ### Testing
 
-- Write tests for all new components
-- Follow the pattern in `__tests__/Button.test.tsx`
-- Run tests with `npm test`
+This project uses Jest and React Testing Library for testing React components. It also includes accessibility testing
+with jest-axe.
+
+#### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+#### Testing Utilities
+
+The project includes several testing utilities to make writing tests easier:
+
+- `__tests__/utils.tsx` - Custom render function that wraps components with necessary providers
+- `__tests__/a11y-test-utils.tsx` - Utilities for accessibility testing with jest-axe
+
+Example usage:
+
+```tsx
+// Import the custom render function
+import { render, screen, fireEvent } from '@/tests/utils';
+// Import the accessibility testing utility
+import { checkA11y } from '@/tests/a11y-test-utils';
+
+// Use the custom render function
+render(<MyComponent />);
+
+// Test accessibility
+await checkA11y(<MyComponent />);
+```
+
+#### Test Templates
+
+The project includes templates for component and integration tests:
+
+- `__tests__/templates/component-test-template.tsx` - Template for component tests
+- `__tests__/templates/integration-test-template.tsx` - Template for integration tests
+
+Use these templates as a starting point for new tests to ensure consistency and comprehensive test coverage.
+
+#### Coverage Requirements
+
+The project has a coverage threshold of 70% for branches, functions, lines, and statements. Coverage reports are
+generated when running `npm run test:coverage` and are uploaded to Codecov in the CI pipeline.
 
 ### Accessibility
 
@@ -90,7 +138,8 @@ For immediate improvements, focus on these high-impact, low-effort tasks:
 
 This project uses GitHub Actions for continuous integration and deployment:
 
-- **CI Workflow** - Runs linting, tests with coverage, and builds the application on every push and pull request
+- **CI Workflow** - Runs linting, tests with coverage, uploads coverage reports to Codecov, and builds the application
+  on every push and pull request
 - **Lighthouse CI** - Runs Lighthouse audits to ensure performance, accessibility, best practices, and SEO standards
 - **Pull Request Validation** - Validates PR titles against conventional commit standards and checks for dependency
   vulnerabilities
@@ -125,6 +174,58 @@ The Google Analytics integration:
 - Respects user privacy settings
 - Only loads if the Measurement ID is provided
 
+## Component Documentation with Storybook
+
+This project uses [Storybook](https://storybook.js.org/) for component documentation and development:
+
+### Running Storybook Locally
+
+```bash
+npm run storybook
+```
+
+This will start Storybook on [http://localhost:6006](http://localhost:6006).
+
+### Building Storybook
+
+```bash
+npm run build-storybook
+```
+
+This will create a static build of Storybook in the `storybook-static` directory.
+
+### Deployed Storybook
+
+The Storybook documentation is automatically deployed to GitHub Pages when changes are pushed to the main branch. You
+can view the latest version at:
+
+`https://[your-github-username].github.io/[repository-name]/`
+
+### Adding Stories
+
+To document a component, create a `.stories.tsx` file next to the component:
+
+```tsx
+// Example: components/ui/MyComponent.stories.tsx
+import type {Meta, StoryObj} from '@storybook/react';
+import {MyComponent} from './MyComponent';
+
+const meta: Meta<typeof MyComponent> = {
+  title: 'UI/MyComponent',
+  component: MyComponent,
+  tags: ['autodocs'],
+};
+
+export default meta;
+type Story = StoryObj<typeof MyComponent>;
+
+export const Default: Story = {
+  args: {
+    // Component props here
+  },
+};
+```
+
 ### Running CI Checks Locally
 
 You can run the CI checks locally before pushing your changes:
@@ -142,6 +243,14 @@ npm run lighthouse
 ```
 
 This will build the application and run Lighthouse CI to audit performance, accessibility, best practices, and SEO.
+
+You can test the Storybook build locally:
+
+```bash
+npm run test:storybook
+```
+
+This will build Storybook to ensure that it compiles correctly.
 
 ## Contributing
 

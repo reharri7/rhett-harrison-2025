@@ -4,19 +4,9 @@ import {motion} from 'framer-motion';
 import {ArrowRight, Calendar, Clock, Search, Tag} from 'lucide-react';
 import Link from 'next/link';
 import {useState} from 'react';
+import {posts} from '@/lib/blog-data';
 
 const categories = ['All', 'Learning'];
-
-const posts = [
-  {
-    title: 'Learning to Learn: My Experience',
-    excerpt: "I recently completed an online course on how to learn. Here's how it went",
-    date: '2025-03-19',
-    readTime: '12 min read',
-    slug: 'learning-to-learn',
-    category: 'Learning',
-  },
-];
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('All');

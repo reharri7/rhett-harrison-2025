@@ -1,6 +1,7 @@
 import React from 'react';
 import {fireEvent, render, screen} from './utils';
 import {Input} from '@/components/ui/input';
+import {checkA11y} from './a11y-test-utils';
 
 describe('Input Component', () => {
   it('renders correctly', () => {
@@ -46,5 +47,30 @@ describe('Input Component', () => {
 
     expect(ref.current).not.toBeNull();
     expect(ref.current?.tagName).toBe('INPUT');
+  });
+
+  it('has no accessibility violations', async () => {
+    await checkA11y(<Input placeholder="Accessible Input"/>);
+  });
+
+  it('has no accessibility violations when disabled', async () => {
+    await checkA11y(<Input disabled placeholder="Disabled Input"/>);
+  });
+
+  it('has no accessibility violations with different input types', async () => {
+    await checkA11y(<Input type="text" placeholder="Text Input"/>);
+    await checkA11y(<Input type="password" placeholder="Password Input"/>);
+    await checkA11y(<Input type="email" placeholder="Email Input"/>);
+    await checkA11y(<Input type="number" placeholder="Number Input"/>);
+  });
+
+  it('has no accessibility violations with aria attributes', async () => {
+    await checkA11y(
+      <Input
+        aria-label="Search"
+        aria-required="true"
+        placeholder="Search"
+      />
+    );
   });
 });

@@ -19,6 +19,14 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+    <head>
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="Rhett Harrison Blog"
+        href="/api/rss"
+      />
+    </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

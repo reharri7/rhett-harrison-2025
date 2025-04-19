@@ -15,3 +15,8 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
+
+// Mock scrollIntoView which is not implemented in JSDOM
+if (typeof window.HTMLElement.prototype.scrollIntoView === 'undefined') {
+  window.HTMLElement.prototype.scrollIntoView = jest.fn();
+}
