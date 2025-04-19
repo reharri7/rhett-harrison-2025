@@ -3,7 +3,7 @@
 import {useState} from 'react';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
-import {Menu, X} from 'lucide-react';
+import {Menu, Rss, X} from 'lucide-react';
 import {cn} from '@/lib/utils';
 import {ThemeToggle} from '@/components/ThemeToggle';
 
@@ -44,11 +44,25 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/api/rss"
+              className="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400"
+              aria-label="RSS Feed"
+            >
+              <Rss className="h-5 w-5"/>
+            </Link>
             <ThemeToggle/>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-4">
+            <Link
+              href="/api/rss"
+              className="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400"
+              aria-label="RSS Feed"
+            >
+              <Rss className="h-5 w-5"/>
+            </Link>
             <ThemeToggle/>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
