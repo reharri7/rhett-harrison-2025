@@ -20,7 +20,13 @@ export function ModifiedThemeSelector() {
   // Only show the selector after mounting to avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
-  }, []);
+
+    // Load theme from localStorage on initial mount
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme && themes.some(t => t.id === savedTheme)) {
+      setTheme(savedTheme);
+    }
+  }, [setTheme]);
 
   if (!mounted) {
     return null;
@@ -47,7 +53,10 @@ export function ModifiedThemeSelector() {
             return (
               <DropdownMenuItem
                 key={t.id}
-                onClick={() => setTheme(t.id)}
+                onClick={() => {
+                  setTheme(t.id);
+                  localStorage.setItem('theme', t.id);
+                }}
                 className="flex items-center gap-2"
               >
                 <Icon className="h-4 w-4"/>

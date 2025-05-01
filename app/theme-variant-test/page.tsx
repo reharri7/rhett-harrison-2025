@@ -2,9 +2,18 @@
 
 import {useTheme} from 'next-themes';
 import {Button} from '@/components/ui/button';
+import {useEffect} from 'react';
 
 export default function ThemeVariantTestPage() {
   const {theme, setTheme} = useTheme();
+
+  // Load theme from localStorage on initial mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme && ['light', 'dark', 'theme-cyberpunk', 'theme-forest'].includes(savedTheme)) {
+      setTheme(savedTheme);
+    }
+  }, [setTheme]);
 
   return (
     <div className="container mx-auto py-10">
@@ -14,17 +23,40 @@ export default function ThemeVariantTestPage() {
       </p>
 
       <div className="flex flex-wrap gap-4 mb-8">
-        <Button onClick={() => setTheme('light')} variant={theme === 'light' ? 'default' : 'outline'}>
+        <Button
+          onClick={() => {
+            setTheme('light');
+            localStorage.setItem('theme', 'light');
+          }}
+          variant={theme === 'light' ? 'default' : 'outline'}
+        >
           Light Theme
         </Button>
-        <Button onClick={() => setTheme('dark')} variant={theme === 'dark' ? 'default' : 'outline'}>
+        <Button
+          onClick={() => {
+            setTheme('dark');
+            localStorage.setItem('theme', 'dark');
+          }}
+          variant={theme === 'dark' ? 'default' : 'outline'}
+        >
           Dark Theme
         </Button>
-        <Button onClick={() => setTheme('theme-cyberpunk')}
-                variant={theme === 'theme-cyberpunk' ? 'default' : 'outline'}>
+        <Button
+          onClick={() => {
+            setTheme('theme-cyberpunk');
+            localStorage.setItem('theme', 'theme-cyberpunk');
+          }}
+          variant={theme === 'theme-cyberpunk' ? 'default' : 'outline'}
+        >
           Cyberpunk Theme
         </Button>
-        <Button onClick={() => setTheme('theme-forest')} variant={theme === 'theme-forest' ? 'default' : 'outline'}>
+        <Button
+          onClick={() => {
+            setTheme('theme-forest');
+            localStorage.setItem('theme', 'theme-forest');
+          }}
+          variant={theme === 'theme-forest' ? 'default' : 'outline'}
+        >
           Forest Theme
         </Button>
       </div>
