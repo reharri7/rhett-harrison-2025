@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   darkMode: ['class'],
@@ -113,7 +114,16 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/typography'),
+    plugin(function ({addVariant}) {
+      // Add theme-cyberpunk variant
+      addVariant('theme-cyberpunk', '.theme-cyberpunk &');
+      // Add theme-forest variant
+      addVariant('theme-forest', '.theme-forest &');
+    }),
+  ],
 };
 
 export default config;

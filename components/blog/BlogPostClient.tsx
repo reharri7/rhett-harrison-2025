@@ -54,7 +54,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
         >
           <Link
             href="/blog"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
+            className="inline-flex items-center text-theme-link mb-8"
           >
             <ArrowLeft className="mr-2 h-4 w-4"/>
             Back to Blog
@@ -76,11 +76,11 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
           <div className="max-w-3xl mx-auto">
             <div className="flex flex-wrap gap-4 items-center mb-6">
               <span
-                className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                className="bg-theme-tag px-3 py-1 rounded-full text-sm flex items-center gap-2">
                 <Tag className="h-4 w-4"/>
                 {post.category}
               </span>
-              <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-4 text-sm text-theme-body">
                 <span className="flex items-center gap-1">
                   <Calendar className="h-4 w-4"/>
                   {new Date(post.date).toLocaleDateString('en-US', {
@@ -96,7 +96,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
               </div>
             </div>
 
-            <h1 className="text-4xl font-bold text-blue-600 mb-6">{post.title}</h1>
+            <h1 className="text-4xl font-bold text-theme-title mb-6">{post.title}</h1>
 
             <div className="flex items-center gap-4 mb-8">
               <div className="relative w-12 h-12 rounded-full overflow-hidden">
@@ -112,10 +112,10 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                 />
               </div>
               <div>
-                <div className="font-semibold text-gray-900 dark:text-gray-100">
+                <div className="font-semibold text-theme-body">
                   {post.author.name}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Author</div>
+                <div className="text-sm text-theme-body">Author</div>
               </div>
             </div>
 
@@ -128,7 +128,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                   const [, ...codeLines] = line.split('\n');
                   const code = codeLines.slice(0, -1).join('\n');
                   return (
-                    <pre key={index} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+                    <pre key={index} className="bg-theme-muted rounded-lg p-4">
                       <code>{code}</code>
                     </pre>
                   );
