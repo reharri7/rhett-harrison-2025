@@ -7,7 +7,7 @@ export async function GET() {
   const siteURL = 'https://rhettharrison.com';
   const author = {
     name: 'Rhett Harrison',
-    email: 'contact@rhettharrison.com', // Using a generic contact email
+    email: 'rhettharrison.dev@gmail.com', // Using a generic contact email
     link: 'https://rhettharrison.com/about',
   };
 

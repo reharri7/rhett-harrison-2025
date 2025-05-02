@@ -3,11 +3,11 @@ import {Github, Linkedin} from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-theme-navbar border-t border-theme-muted">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-theme-body">
               © {new Date().getFullYear()} Rhett Harrison. All rights reserved.
             </p>
           </div>
@@ -16,7 +16,7 @@ export default function Footer() {
               href="https://github.com/reharri7"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              className="text-theme-body hover:text-theme-link"
             >
               <Github className="h-5 w-5" />
             </Link>
@@ -24,7 +24,7 @@ export default function Footer() {
               href="https://linkedin.com/in/rhettharrison"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              className="text-theme-body hover:text-theme-link"
             >
               <Linkedin className="h-5 w-5" />
             </Link>

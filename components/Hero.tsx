@@ -13,11 +13,11 @@ export default function Hero() {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h1 className="text-5xl font-bold text-blue-600 mb-6">Rhett Harrison</h1>
-        <h2 className="text-3xl font-semibold text-blue-800 dark:text-blue-400 mb-4">
+        <h1 className="text-5xl font-bold text-theme-title mb-6">Rhett Harrison</h1>
+        <h2 className="text-3xl font-semibold text-theme-subtitle mb-4">
           Senior Software Engineer
         </h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-theme-body mb-8 max-w-2xl mx-auto">
           Building beautiful, responsive, and user-friendly web applications with modern
           technologies.
         </p>
@@ -26,7 +26,7 @@ export default function Hero() {
             href="https://github.com/reharri7"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 transition-colors"
+            className="text-theme-link transition-colors"
           >
             <Github className="w-8 h-8" />
           </Link>
@@ -34,14 +34,14 @@ export default function Hero() {
             href="https://www.linkedin.com/in/rhettharrison/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 transition-colors"
+            className="text-theme-link transition-colors"
           >
             <Linkedin className="w-8 h-8" />
           </Link>
         </div>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center gap-2 bg-theme-primary text-white px-8 py-3 rounded-lg transition-colors"
         >
           Let&apos;s work together
           <ArrowRight className="w-5 h-5" />

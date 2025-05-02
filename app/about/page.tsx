@@ -38,14 +38,14 @@ export default function About() {
         className="grid md:grid-cols-2 gap-12 items-center mb-20"
       >
         <div>
-          <h1 className="text-4xl font-bold text-blue-600 mb-6">About Me</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+          <h1 className="text-4xl font-bold text-theme-title mb-6">About Me</h1>
+          <p className="text-xl text-theme-body mb-6">
             Hi! I&apos;m Rhett Harrison, a passionate full-stack developer with 3 years of
             experience in building web applications. I specialize in creating responsive,
             user-friendly websites using modern technologies.
           </p>
-          <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
-            <Globe className="w-5 h-5 text-blue-600" />
+          <div className="flex items-center gap-4 text-theme-body">
+            <Globe className="w-5 h-5 text-theme-title"/>
             <span>Based in Sonora, CA</span>
           </div>
         </div>
@@ -70,17 +70,17 @@ export default function About() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="mb-20"
       >
-        <h2 className="text-3xl font-bold text-blue-600 mb-8 flex items-center gap-3">
+        <h2 className="text-3xl font-bold text-theme-title mb-8 flex items-center gap-3">
           <Sparkles className="w-6 h-6" />
           My Journey
         </h2>
-        <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+        <div className="bg-theme-card rounded-lg p-8 shadow-lg">
+          <p className="text-theme-body mb-6">
             My journey in web development began during my computer science studies at Arizona State
             University. What started as a curiosity quickly turned into a passion for creating
             innovative digital solutions.
           </p>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-theme-body">
             Over the years, I&apos;ve had the privilege of working with startups and established
             agencies, helping them build scalable web applications and implement modern development
             practices. I&apos;m constantly learning and exploring new technologies to stay at the
@@ -95,18 +95,18 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <h2 className="text-3xl font-bold text-blue-600 mb-8">Technical Skills</h2>
+        <h2 className="text-3xl font-bold text-theme-title mb-8">Technical Skills</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skills.map(skill => {
             const Icon = skill.icon;
             return (
               <div
                 key={skill.category}
-                className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg"
+                className="bg-theme-card rounded-lg p-6 shadow-lg"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Icon className="w-6 h-6 text-blue-600" />
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                  <Icon className="w-6 h-6 text-theme-title"/>
+                  <h3 className="text-xl font-semibold text-theme-body">
                     {skill.category}
                   </h3>
                 </div>
@@ -114,9 +114,9 @@ export default function About() {
                   {skill.items.map(item => (
                     <li
                       key={item}
-                      className="text-gray-600 dark:text-gray-300 flex items-center gap-2"
+                      className="text-theme-body flex items-center gap-2"
                     >
-                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
+                      <span className="w-1.5 h-1.5 bg-theme-primary rounded-full"/>
                       {item}
                     </li>
                   ))}
