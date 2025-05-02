@@ -11,7 +11,12 @@ const themes = [
   {id: 'dark', name: 'Dark', icon: Moon},
   {id: 'theme-cyberpunk', name: 'Cyberpunk', icon: Palette},
   {id: 'theme-forest', name: 'Forest', icon: Palette},
-  // Add more themes as needed
+  {id: 'theme-synthwave', name: 'Synthwave', icon: Palette},
+  {id: 'theme-aqua', name: 'Aqua', icon: Palette},
+  {id: 'theme-luxury', name: 'Luxury', icon: Palette},
+  {id: 'theme-garden', name: 'Garden', icon: Palette},
+  {id: 'theme-coffee', name: 'Coffee', icon: Palette},
+  {id: 'theme-abyss', name: 'Abyss', icon: Palette},
 ];
 
 export function ThemeSelector() {

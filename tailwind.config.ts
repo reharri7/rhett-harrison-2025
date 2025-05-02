@@ -122,6 +122,18 @@ const config: Config = {
       addVariant('theme-cyberpunk', '.theme-cyberpunk &');
       // Add theme-forest variant
       addVariant('theme-forest', '.theme-forest &');
+      // Add theme-synthwave variant
+      addVariant('theme-synthwave', '.theme-synthwave &');
+      // Add theme-aqua variant
+      addVariant('theme-aqua', '.theme-aqua &');
+      // Add theme-luxury variant
+      addVariant('theme-luxury', '.theme-luxury &');
+      // Add theme-garden variant
+      addVariant('theme-garden', '.theme-garden &');
+      // Add theme-coffee variant
+      addVariant('theme-coffee', '.theme-coffee &');
+      // Add theme-abyss variant
+      addVariant('theme-abyss', '.theme-abyss &');
     }),
   ],
 };
