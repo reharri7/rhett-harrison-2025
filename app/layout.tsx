@@ -33,7 +33,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-          themes={['light', 'dark', 'theme-cyberpunk', 'theme-forest']}
+          themes={['light', 'dark', 'theme-cyberpunk', 'theme-forest', 'theme-synthwave', 'theme-aqua', 'theme-luxury', 'theme-garden', 'theme-coffee', 'theme-abyss']}
         >
           <Analytics />
           <Suspense fallback={null}>
