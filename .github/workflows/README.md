@@ -11,7 +11,21 @@ The CI workflow runs on push to the main branch and on pull requests. It perform
 - Installs dependencies
 - Runs linting
 - Runs tests with coverage
+- Uploads coverage reports to Codecov
 - Builds the application
+
+#### Required Secrets
+
+- `CODECOV_TOKEN` - Token for uploading coverage reports to Codecov. You can get this
+  from [Codecov](https://codecov.io/) after setting up your repository.
+
+### Storybook (storybook.yml)
+
+The Storybook workflow runs on push to the main branch. It performs the following tasks:
+
+- Installs dependencies
+- Builds Storybook
+- Deploys Storybook to GitHub Pages
 
 ## Local Development
 
@@ -32,6 +46,9 @@ act pull_request -j validate
 
 # Run the Deploy Preview workflow
 act pull_request -j deploy-preview
+
+# Run the Storybook workflow
+act -j deploy
 ```
 
 You can also run Lighthouse CI locally:

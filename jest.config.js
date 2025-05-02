@@ -18,6 +18,26 @@ const customJestConfig = {
     '<rootDir>/.next/',
     '<rootDir>/__tests__/utils.tsx',
   ],
+  // Coverage configuration
+  collectCoverageFrom: [
+    'components/**/*.{js,jsx,ts,tsx}',
+    'app/**/*.{js,jsx,ts,tsx}',
+    'lib/**/*.{js,jsx,ts,tsx}',
+    'hooks/**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**',
+    '!**/.next/**',
+    '!**/coverage/**',
+    '!components/ui/**', // Ignoring UI components directory for coverage
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 12,
+      functions: 8,
+      lines: 12,
+      statements: 12,
+    },
+  },
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
