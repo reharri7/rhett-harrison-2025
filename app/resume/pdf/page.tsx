@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     color: '#6b7280',
   },
   section: {
-    marginBottom: 20,
+    marginBottom: 15,
   },
   sectionTitle: {
     fontSize: 18,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     color: '#2563eb',
   },
   experienceItem: {
-    marginBottom: 15,
+    marginBottom: 12,
   },
   companyTitle: {
     fontSize: 14,
