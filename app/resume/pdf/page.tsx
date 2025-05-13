@@ -76,7 +76,7 @@ const ResumePDF = () => (
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.name}>Rhett Harrison</Text>
-        <Text style={styles.title}>Senior Full Software Engineer</Text>
+        <Text style={styles.title}>Senior Full Stack Software Engineer</Text>
         <Text style={styles.contact}>
           Sonora, CA • rhettharrison.dev@gmail.com • (209) 605-1908
         </Text>
@@ -165,11 +165,11 @@ const ResumePDF = () => (
       </View>
 
       {/*/!* Certifications *!/*/}
-      {/*<View style={styles.section}>*/}
-      {/*  <Text style={styles.sectionTitle}>Certifications</Text>*/}
-      {/*  <Text style={styles.description}>• Complete Angular Developer, Zero to Mastery</Text>*/}
-      {/*  <Text style={styles.description}>• Complete SQL + Databases, Zero to Mastery</Text>*/}
-      {/*</View>*/}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Certifications</Text>
+        <Text style={styles.description}>• Complete Angular Developer, Zero to Mastery</Text>
+        {/*<Text style={styles.description}>• Complete SQL + Databases, Zero to Mastery</Text>*/}
+      </View>
     </Page>
   </Document>
 );
