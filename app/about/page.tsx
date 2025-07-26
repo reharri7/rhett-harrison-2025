@@ -13,12 +13,12 @@ const skills = [
   {
     category: 'Backend Development',
     icon: Server,
-    items: ['SpringBoot', 'Java'],
+    items: ['SpringBoot', 'Java', 'Ruby on Rails'],
   },
   {
     category: 'Database',
     icon: Database,
-    items: ['PostgreSQL', 'MySQL', 'PL/SQL', 'Prisma'],
+    items: ['Oracle', 'PostgreSQL', 'MySQL', 'Prisma', 'HibernateORM'],
   },
   {
     category: 'Tools & Others',
