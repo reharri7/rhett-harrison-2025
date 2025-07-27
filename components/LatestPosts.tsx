@@ -7,6 +7,13 @@ import {cn} from '@/lib/utils';
 
 const posts = [
   {
+    title: 'Introducing Harrison\'s Law',
+    excerpt: "Early in my career, I was given three months to build a full app from scratch. It took me six. Then I rewrote it... Three more times.",
+    date: '2025-07-27',
+    readTime: '4 min read',
+    slug: 'introducing-harrisons-law',
+  },
+  {
     title: 'Learning to Learn: My Experience',
     excerpt: "I recently completed an online course on how to learn. Here's how it went",
     date: '2025-03-20',
