@@ -38,6 +38,39 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         />
       </div>
     ),
+    // Table components
+    table: ({children}) => (
+      <div className="overflow-x-auto my-8">
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          {children}
+        </table>
+      </div>
+    ),
+    thead: ({children}) => (
+      <thead className="bg-gray-50 dark:bg-gray-800">
+      {children}
+      </thead>
+    ),
+    tbody: ({children}) => (
+      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+      {children}
+      </tbody>
+    ),
+    tr: ({children}) => (
+      <tr>
+        {children}
+      </tr>
+    ),
+    th: ({children}) => (
+      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+        {children}
+      </th>
+    ),
+    td: ({children}) => (
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+        {children}
+      </td>
+    ),
     pre: ({ children }) => children,
     code: ({ className, children }) => {
       // If it's an inline code block (no language specified)
