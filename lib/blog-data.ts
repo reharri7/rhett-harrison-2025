@@ -14,7 +14,7 @@ export const posts: BlogPost[] = [
     title: 'Introducing Harrison\'s Law',
     excerpt: "Early in my career, I was given three months to build a full app from scratch. It took me six. Then I rewrote it... Three more times.",
     date: '2025-07-27',
-    readTime: '12 min read',
+    readTime: '4 min read',
     slug: 'introducing-harrisons-law',
     category: 'Learning',
   },
