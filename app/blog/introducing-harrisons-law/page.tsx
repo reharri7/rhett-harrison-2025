@@ -4,7 +4,7 @@ import BlogPost from '@/components/blog/BlogPost';
 import Content from './content.mdx';
 
 const metadata = {
-  title: 'Introducing Harrison\'s Law | Rhett Harrison',
+  title: 'Introducing Harrison\'s Law',
   date: '2025-07-27',
   readTime: '4 min read',
   category: 'TypeScript',
