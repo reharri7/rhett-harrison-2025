@@ -28,8 +28,8 @@ export default function Blog() {
         transition={{duration: 0.5}}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl font-bold text-blue-600 mb-4">Blog</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold text-theme-title mb-4">Blog</h1>
+        <p className="text-xl text-theme-body max-w-2xl mx-auto">
           Thoughts, tutorials, and insights about web development and software engineering.
         </p>
       </motion.div>
@@ -43,8 +43,8 @@ export default function Blog() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full transition-colors ${
                   selectedCategory === category
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'bg-theme-primary text-white'
+                    : 'bg-theme-muted text-theme-body hover:bg-opacity-80'
                 }`}
               >
                 {category}
@@ -57,7 +57,7 @@ export default function Blog() {
               placeholder="Search articles..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full md:w-64 px-4 py-2 pl-10 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full md:w-64 px-4 py-2 pl-10 rounded-lg border border-theme-muted bg-theme-input focus:outline-none focus:ring-2 focus:ring-theme-primary"
             />
             <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"/>
           </div>
@@ -71,15 +71,15 @@ export default function Blog() {
             initial={{opacity: 0, y: 20}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.5, delay: index * 0.1}}
-            className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg"
+            className="bg-theme-card rounded-lg p-6 shadow-lg"
           >
             <div className="flex flex-wrap gap-4 items-center mb-4">
               <span
-                className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                className="bg-theme-tag px-3 py-1 rounded-full text-sm flex items-center gap-2">
                 <Tag className="h-4 w-4"/>
                 {post.category}
               </span>
-              <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-4 text-sm text-theme-body">
                 <span className="flex items-center gap-1">
                   <Calendar className="h-4 w-4"/>
                   {new Date(post.date).toLocaleDateString('en-US', {
@@ -94,13 +94,13 @@ export default function Blog() {
                 </span>
               </div>
             </div>
-            <h2 className="text-2xl font-semibold text-blue-600 hover:text-blue-700 mb-3">
+            <h2 className="text-2xl font-semibold text-theme-title mb-3">
               <Link href={`/blog/${post.slug}`}>{post.title}</Link>
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
+            <p className="text-theme-body mb-4">{post.excerpt}</p>
             <Link
               href={`/blog/${post.slug}`}
-              className="inline-flex items-center text-blue-600 hover:text-blue-700"
+              className="inline-flex items-center text-theme-link"
             >
               Read more
               <ArrowRight className="ml-2 h-4 w-4"/>

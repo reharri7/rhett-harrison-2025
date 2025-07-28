@@ -85,8 +85,8 @@ export default function Contact() {
           transition={{duration: 0.5}}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold text-blue-600 mb-4">Get in Touch</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-theme-title mb-4">Get in Touch</h1>
+          <p className="text-xl text-theme-body max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I&apos;d love to hear from you. Let&apos;s
             create something amazing together.
           </p>
@@ -100,22 +100,22 @@ export default function Contact() {
             animate={{opacity: 1, x: 0}}
             transition={{duration: 0.5, delay: 0.2}}
           >
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
-              <h2 className="text-2xl font-semibold text-blue-600 mb-6">Contact Information</h2>
+            <div className="bg-theme-card rounded-lg p-8 shadow-lg">
+              <h2 className="text-2xl font-semibold text-theme-title mb-6">Contact Information</h2>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
-                    <MapPin className="h-6 w-6 text-blue-600 dark:text-blue-400"/>
+                  <div className="bg-theme-tag p-3 rounded-full">
+                    <MapPin className="h-6 w-6 text-theme-title"/>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Location</p>
-                    <p className="text-gray-900 dark:text-gray-100">Sonora, CA</p>
+                    <p className="text-sm text-theme-body">Location</p>
+                    <p className="text-theme-body font-medium">Sonora, CA</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+                <h3 className="text-lg font-semibold text-theme-subtitle mb-4">
                   Follow Me
                 </h3>
                 <div className="flex gap-4">
@@ -123,17 +123,17 @@ export default function Contact() {
                     href="https://github.com/reharri7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
+                    className="bg-theme-tag p-3 rounded-full hover:bg-opacity-80 transition-colors"
                   >
-                    <Github className="h-6 w-6 text-blue-600 dark:text-blue-400"/>
+                    <Github className="h-6 w-6 text-theme-title"/>
                   </Link>
                   <Link
                     href="https://linkedin.com/in/rhettharrison"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
+                    className="bg-theme-tag p-3 rounded-full hover:bg-opacity-80 transition-colors"
                   >
-                    <Linkedin className="h-6 w-6 text-blue-600 dark:text-blue-400"/>
+                    <Linkedin className="h-6 w-6 text-theme-title"/>
                   </Link>
                 </div>
               </div>
@@ -149,14 +149,14 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg"
+              className="bg-theme-card rounded-lg p-8 shadow-lg"
             >
-              <h2 className="text-2xl font-semibold text-blue-600 mb-6">Send Message</h2>
+              <h2 className="text-2xl font-semibold text-theme-title mb-6">Send Message</h2>
               <div className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-theme-body mb-2"
                   >
                     Your Name
                   </label>
@@ -167,13 +167,13 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 rounded-lg border border-theme-muted bg-theme-input focus:outline-none focus:ring-2 focus:ring-theme-primary"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-theme-body mb-2"
                   >
                     Your Email
                   </label>
@@ -184,13 +184,13 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 rounded-lg border border-theme-muted bg-theme-input focus:outline-none focus:ring-2 focus:ring-theme-primary"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-theme-body mb-2"
                   >
                     Subject
                   </label>
@@ -201,13 +201,13 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 rounded-lg border border-theme-muted bg-theme-input focus:outline-none focus:ring-2 focus:ring-theme-primary"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-theme-body mb-2"
                   >
                     Message
                   </label>
@@ -218,13 +218,13 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 rounded-lg border border-theme-muted bg-theme-input focus:outline-none focus:ring-2 focus:ring-theme-primary"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors ${
+                  className={`w-full flex items-center justify-center gap-2 bg-theme-primary text-white px-6 py-3 rounded-lg transition-colors ${
                     isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                   }`}
                 >
@@ -238,10 +238,13 @@ export default function Contact() {
                   )}
                 </button>
                 {submitStatus === 'success' && (
-                  <p className="text-green-600 text-center">Message sent successfully!</p>
+                  <p
+                    className="text-emerald-600 dark:text-emerald-400 theme-cyberpunk:text-emerald-400 theme-forest:text-emerald-400 text-center">Message
+                    sent successfully!</p>
                 )}
                 {submitStatus === 'error' && (
-                  <p className="text-red-600 text-center">
+                  <p
+                    className="text-red-600 dark:text-red-400 theme-cyberpunk:text-red-400 theme-forest:text-red-400 text-center">
                     Failed to send message. Please try again.
                   </p>
                 )}

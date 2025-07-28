@@ -7,23 +7,23 @@ import CodeWindow from '@/components/ui/code-window';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    h1: ({children}) => <h1 className="text-4xl font-bold text-blue-600 mb-6">{children}</h1>,
+    h1: ({children}) => <h1 className="text-4xl font-bold text-theme-title mb-6">{children}</h1>,
     h2: ({ children }) => (
-      <h2 className="text-3xl font-bold text-blue-600 mt-8 mb-4">{children}</h2>
+      <h2 className="text-3xl font-bold text-theme-title mt-8 mb-4">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-2xl font-bold text-blue-600 mt-6 mb-3">{children}</h3>
+      <h3 className="text-2xl font-bold text-theme-subtitle mt-6 mb-3">{children}</h3>
     ),
     p: ({ children }) => (
-      <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{children}</p>
+      <p className="text-theme-body mb-4 leading-relaxed">{children}</p>
     ),
-    ul: ({children}) => <ul className="list-disc list-inside mb-4 space-y-2 ml-4">{children}</ul>,
+    ul: ({children}) => <ul className="list-disc list-inside text-theme-body mb-4 space-y-2 ml-4">{children}</ul>,
     ol: ({ children }) => (
-      <ol className="list-decimal list-inside mb-4 space-y-2 ml-4">{children}</ol>
+      <ol className="list-decimal list-inside text-theme-body mb-4 space-y-2 ml-4">{children}</ol>
     ),
-    li: ({children}) => <li className="text-gray-600 dark:text-gray-300">{children}</li>,
+    li: ({children}) => <li className="text-theme-body">{children}</li>,
     a: ({ href, children }) => (
-      <Link href={href || '#'} className="text-blue-600 hover:text-blue-700 underline">
+      <Link href={href || '#'} className="text-theme-link underline">
         {children}
       </Link>
     ),
@@ -76,7 +76,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       // If it's an inline code block (no language specified)
       if (!className) {
         return (
-          <code className="bg-gray-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400 rounded px-2 py-1 text-sm font-mono">
+          <code className="bg-theme-muted text-theme-title rounded px-2 py-1 text-sm font-mono">
             {children}
           </code>
         );
